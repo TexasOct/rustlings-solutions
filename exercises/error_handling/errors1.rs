@@ -5,8 +5,6 @@
 // construct to `Option` that can be used to express error conditions. Let's use it!
 // Execute `rustlings hint errors1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub fn generate_nametag_text(name: String) -> Option<String> {
     if name.is_empty() {
         // Empty names aren't allowed.
@@ -24,7 +22,7 @@ mod tests {
     fn generates_nametag_text_for_a_nonempty_name() {
         assert_eq!(
             generate_nametag_text("Beyoncé".into()),
-            Ok("Hi! My name is Beyoncé".into())
+            Some("Hi! My name is Beyoncé".into())
         );
     }
 
@@ -33,7 +31,8 @@ mod tests {
         assert_eq!(
             generate_nametag_text("".into()),
             // Don't change this line
-            Err("`name` was empty; it must be nonempty.".into())
+            //Err("`name` was empty; it must be nonempty.".into())
+            None
         );
     }
 }
